@@ -1,0 +1,141 @@
+{% for key,value in sample_dict.items %}
+  {{ key }}:{{ value }}
+{% endfor %}
+<a href="{% url 'index1' %}">Click here to go to index page</a>
+
+<br /><br /><br /><br /><br />
+{{ django|title }}<br/>
+{{ django|upper }}<br/>
+{{ django|lower }}<br/>
+
+
+{{ my_date|date:"Y-m-d" }}<br/>
+<p>Rendered text with {{ pub_date|date:"c" }}</p><br/>
+
+firstname is {{firstname}}.lastname is {{lastname}}
+1st key:  {{ username }}<br/>
+Whole Dict: {{ sample_dict }}<br/>
+
+
+Key:      {{ sample_dict.key1 }}<br/>
+
+Value: {{ sample_dict.value1 }}<br />
+
+{% if today_weekend %}
+   <p>welcome</p>
+{% endif %}   
+
+<br /><br /><br /><br /><br />
+
+Whole List: {{ sample_list reversed }}<br/>
+{% if sample_list|length > 3 %}
+   list contains {{sample_list|length}} elements
+{% endif %}
+first element:      {{ sample_list.0 }}<br/>
+
+3 element: {{ saample_list.3 }}<br />
+
+
+<br /><br /><br /><br /><br />
+{{ a|add:"10" }}
+{% if elements and elements1 %}
+
+   Both Elements key exists
+{% endif %}<br/>
+{% if not elements %}
+   Elements doesnt exist
+{% endif %}<br/>
+{% if elements or sample_list %}
+  one list exixts
+{% endif %}<br/>
+
+<br /><br /><br /><br /><br />
+
+<ul>
+	{% for val in sample_list3 %}
+	    <li>{{ val }}</li>
+	{% empty %}
+	    <li> sorry,no more elemnets </li>
+	          	{% endfor %}
+</ul>
+{{ sample_list|linenumbers }}
+
+<br /><br /><br /><br /><br />
+
+<ol>
+	{% for val in sample_list %}
+        <li>{{ val }}</li>
+    {% endfor %}
+</ol>        
+<br /><br /><br /><br /><br />
+
+{% for val in sample_list %}
+  <p>
+      {% if forloop.first %}
+             this is first element
+      {% endif %}
+      
+      {{forloop.counter }}.{{val}}
+      {{ forloop.revcounter }}.{{val}}
+
+      {% if forloop.last %}
+         this is last element 
+       {% endif %}        
+   </p>
+{% endfor %}   
+
+<br /><br /><br /><br /><br />
+
+{{ sample_list|join:"*"}}<br/>
+{{ sample_list1|default:"Nothing found" }}<br/>
+{{ sample_list|length }}<br/>
+
+<br /><br /><br /><br /><br />
+
+{{ html_text|safe }}
+
+<br /><br /><br /><br /><br />
+
+{% if "abc" == "abc" %}
+   <p>Equal</p>
+{% endif %}
+
+<br /><br /><br /><br /><br />
+
+{% ifnotequal "abc" "xyz" %}
+    <p>Not equal</p>
+{% endifnotequal %} <br/>
+
+{% if drinks %}
+  We have drinks
+{% else %}
+   No drinks,for sale  
+{% endif %}
+<br/><br/>
+{{ val|dictsort:"name" }}<br/>
+<br/>
+<ul>
+{% for book in books|dictsort:"author.age" %}
+   <li>{{ book.title }} ({{ book.author.name }})</li>
+{% endfor %}</ul><br/>   
+{% now "r" %}   <br/>
+{% now "F jS Y" as current_year %}
+{{current_year}}
+<form method="POST" action="">
+	{% csrf_token %}
+	First Name: <input type="text" name="first_name" />
+
+	Last Name: <input type="text" name="last_name" {% if firstname_entered %}value="{{ firstname_entered }}" {% endif %} />
+	Gender:
+	<select name="gender">
+		<option>Please select</option>
+		<option value="male" {% if request.POST.gender == "male" %} selected {% endif %}>Male</option>
+		<option value="female" {% if request.POST.gender == "female" %} selected {% endif %}>Female</option>
+	</select>
+	<button type="submit">Submit</button>
+</form>
+
+{{message}}
+{% filter upper %}
+  hello world!
+{% endfilter %}

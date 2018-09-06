@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product</title>
+<h1 style='text-align: center'>Form</h1>
+<style>
+	table{ 
+	     border:2px solid black; }
+  </style>  
+</head>
+<body>
+<form method="POST" action="">
+	{%csrf_token %}
+	<table id="table1"; cellspacing="5px" cellpadding="5%"; align="center">
+	<tr>
+	<select name="Bname">
+		<option>select</option>
+		<option value="dell"  {% if request.POST.Bname == "dell" %} selected {% endif %}>dell</option>
+		<option value="hp" {% if request.POST.Bname =="hp" %} selected {% endif %}>hp</option>
+		<option value="lenovo" {% if request.POST.Bname == "lenovo" %} selected {% endif %}>lenovo</option>
+	</select>{bname1}}</td>
+    </tr>
+    <tr>
+    <td>Estd:<input type='text' name='estd' value={{ estd }}><br><p style='color:red'>{{estd}}</p>
+    Lastname:<input type='text' name='sku' value={{ sku }}><br><p style='color:red'>{{sku}}</p></td>
+    </tr>
+    <tr>
+     <td>Desc:<input type='text' name='desc' value={{ desc }}><br><p style='color:red'>{{desc}}</p></td>
+    </tr>
+    <tr><td>Price:<input type='text' name='price' value={{ price }}><br><p style='color:red'>{{price}}</p></td></tr>
+    <tr><td>
+    <input style='margin-top: 30px;text-align: center;' type="submit" value='Submit'>
+    </td></tr>
+</table>
+</form>
+</body>
+</html>

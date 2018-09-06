@@ -1,0 +1,74 @@
+.one{
+	width:100%;
+}
+.a{
+	font-size:30px;
+	text-align: center;
+	padding-top:50px;
+	padding-bottom: 0px;
+	width:100%;
+	height:400px;
+	background-image: url("https://previews.123rf.com/images/rtimages/rtimages1110/rtimages111000043/10832449-photo-d-un-bloc-notes-vierge-et-un-crayon-a-statu%C3%A9-sur-un-bureau-ajouter-votre-propre-copie-.jpg");
+
+}
+.b{
+	font-size:25px;
+	text-align: center;
+	padding-top:100px;
+	padding-bottom: 0px;
+	width:100%;
+	height:200px;
+}
+.c{
+	background-color:#74affb;
+	color:white;
+	font-size:20px;
+	text-align: center;
+	padding-top:30px;
+	padding-bottom: 0px;
+	width:100%;
+	height:300px;
+	text-align: justify-all;
+}
+.e{
+	color:yellow;
+}
+.button1{
+	background-color:#0d0d7a;
+	color:white;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 8px;
+	padding:10px;
+}
+.button2{
+	background-color: black;
+	text-align: center;
+	color:white;
+	font-size: 20px;
+	border-radius: 8px;
+	padding:10px;
+}
+.d{
+	width:100%;
+	/*padding-left:20px;*/
+	/*padding-bottom:0px;*/
+	padding-top:10px;
+}
+.d ul{
+	margin:0;
+	padding-left:100px;
+	text-align: center;
+}
+.d ul li{
+	list-style-position: inside;
+	list-style: none;
+	float: left;
+	/*padding-left:110px;*/
+	width: 25%;
+	/*margin-left: 40px;*/
+	text-align: center;*/
+}
+.d ul li a{
+	padding:50px;
+}

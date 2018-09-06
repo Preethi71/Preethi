@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form1</title>
+<h1 style='text-align: center'>Form</h1>
+<style>
+	table{ 
+	     border:2px solid black; }
+  </style>  
+</head>
+<body>
+<form method="POST" action="">
+	{%csrf_token %}
+	<table id="table1"; cellspacing="5px" cellpadding="5%"; align="center">
+	<tr>
+	<td align="center">Title:
+	<select name="Title">
+		<option>select</option>
+		<option value="male" {% if request.POST.Title == "male" %} selected {% endif %}>Male</option>
+		<option value="female" {% if request.POST.Title == "female" %} selected {% endif %}>Female</option>
+	</select>{{title1}}</td>
+    </tr>
+    <tr>
+    <td>Firstname:<input type='text' name='Firstname' value={{ Firstname }}><br><p style='color:red'>{{firstname}}</p>
+    Lastname:<input type='text' name='Lastname' value={{ Lastname }}><br><p style='color:red'>{{lastname}}</p></td>
+    </tr>
+    <tr>
+     <td>Phonenumber:<input type='number' name='Phonenumber' value={{ Phonenumber }}><br><p style='color:red'>{{phonenumber}}</p></td>
+    </tr>
+    <tr><td>Email id:<input type='text' name='Email id' value={{ Emailid }}><br><p style='color:red'>{{emailid}}</p></td></tr>
+    <tr><td>DOB:<input type='Date' name='DOB' value={{ Dob }}><br><p style='color:red'>{{dob}}</p></td></tr>
+    <tr><td>Address:<input type='text' name='Address' value={{ Address }}><br><p style='color:red'>{{address}}</p></td></tr>
+    <tr><td>
+      <input style='margin-top: 30px;text-align: center;' type="submit" value='Submit'>
+    </td></tr>
+</table>
+</form>
+
+

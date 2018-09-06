@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculate</title>
+</head>
+<body>
+
+<form class='frm' action="" method="POST">
+  {%csrf_token%}
+ Enter a value<input type="number" name="a" value="{{ value1 }}">{{error1}}<br/>
+ Enter b value<input type="number" name="b" value="{{ value2 }}">{{error2}}
+     <button type="text" name="w" value="+">add</button>
+     <button type="text" name="w" value="-">sub</button>
+     <button type="text" name="w" value="*">mul</button>
+     <button type="text" name="w" value="/">div</button>
+</form>
+{{value1}}
+{{op}}
+{{value2}}
+{{e}}
+{{result}}  
+</body>
+</html>
